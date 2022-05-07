@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Заявка</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles/styleforms.css" rel="stylesheet" type="text/css"/>
+        <link href="styles/styleaccount.css" rel="stylesheet" type="text/css"/>
+        <script src="scripts/accountScript.js" type="text/javascript"></script>
+        <script src="scripts/SendApplication.js" type="text/javascript"></script>
+        <script src="scripts/jquery-3.6.0.min.js" type="text/javascript"></script>
+    </head>
+    <body onload = 'CurrentUser()'>
+        
+        <div id = 'current-user' class = 'user'></div>
+        
+        <div class="login-box">
+        <h2>Заявка</h2>
+            <form>
+            
+                <div class = "user-box">
+                    <input type = "tel" name = "phone" required="" class = 'phone'>
+                    <label>Номер телефона</label>
+                    <p class = "errors" id = "ph"></p>
+                </div>
+                
+                 <div class = "user-box">
+                    <input type = "number" name = "count" min = "1" required="" class = 'count'>
+                    <label>Количество человек</label>
+                    <p class = "errors" id = "counterr"></p>
+                </div>
+                
+                <div>
+                <select class="select-css" id = "tur">
+                    <option>Выберите тур</option>
+                    <option>Солнечный Питер</option>
+                    <option>Красивая Пенза</option>
+                    <option>Жаркие Мальдивы</option>
+                    <option>Целительные источники</option>
+                    <option>Горы Кавказа</option>
+                    <option>Карпаты</option>
+                    <option>Пляжи Кипра</option>
+                </select>
+                    <p class = "errors" id = "turerr"></p>
+                </div>
+                
+                <div class = "user-box">
+                    <input type = "date" name = "date" required="" class = 'date'>
+                    <label></label>
+                    <p class = "errors" id = "dateerr"></p>
+                </div>
+                
+                <textarea placeholder = "Добавьте комментарий" class = "comment"></textarea>
+                <div>
+         <p class = "errors" id = "apperr"></p>
+         </div>
+                <p>
+                <input type ="button" class ="bn3637 bn36" value ="Сохранить" onclick="sendApplication()">
+               
+                <input type ="button" class ="bn3637 bn36" value ="Главная" onclick="back()">
+                
+                </p>
+           
+         </form>
+        </div>
+       
+    </body>
+</html>
