@@ -34,7 +34,7 @@ if ((int) $data['age'] <= 5 || (int)$data['age'] > 100){
     $errors['age-error'] = '';
 }
 
-$users = file_get_contents('Users.json');
+$users = file_get_contents('JSON/Users.json');
 
 $usersJSON = json_decode($users , true);
 

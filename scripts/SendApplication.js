@@ -36,11 +36,13 @@ function sendApplication() {
              else
                 turError.text("");
             
-            if (errors['countErr'] == false){
+            if (errors['countErr'] == false || errors['countErr'] == false){
                 k++;
-                counterr.text('Введите количество персон');}
+                counterr.text('Введите корректные данные');}
              else
                  counterr.text('');
+             
+             
              
              if (errors['dateErr'] == false){
                 k++;

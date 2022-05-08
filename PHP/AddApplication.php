@@ -15,6 +15,7 @@ $k = 0;
 $error_phone = true;
 $error_tur = true;
 $error_count = true;
+$error_mines = true;
 $error_date = true;
 $error_APPLICATION = true;
 
@@ -29,6 +30,9 @@ if ($data['tur'] == 'Выберите тур')
 if ($data['count'] == '')
     $error_count = false;
 
+if (strpos($data['count'] , '-') != false)
+    $error_mines = false;
+
 if ($data['date'] == '')
     $error_date = false;
 
@@ -36,6 +40,7 @@ $error['phoneErr'] = $error_phone;
 $error['turErr'] = $error_tur;
 $error['countErr'] = $error_count;
 $error['dateErr'] = $error_date;
+$error['minesErr'] = $error_mines;
 
 //проверка на повторную заявку
 foreach ($baseUsers as $USER => $datauserbase){
@@ -58,7 +63,7 @@ foreach ($baseUsers as $USER => $datauserbase){
     
 echo json_encode($error);
 
-if ($error_phone == true && $error_tur == true && $error_count == true && $error_date == true && $error_APPLICATION == true){
+if ($error_phone == true && $error_tur == true && $error_count == true && $error_date == true && $error_APPLICATION == true && $error_mines == true){
 
     
 /////////////////////////////////////////////////////   Добавление заявки в базу 
