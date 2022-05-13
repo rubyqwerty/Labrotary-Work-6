@@ -27,6 +27,7 @@ function enter(){
             } else{
                 localStorage['current user'] = output['current user'];
                 window.location.href = 'account.html';
+                
             }
         }
     };

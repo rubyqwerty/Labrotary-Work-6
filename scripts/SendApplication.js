@@ -52,7 +52,7 @@ function sendApplication() {
              
              if (errors['appErr'] == false){
                  k++;
-                 apperr.text('Вы уже отправляли такую заявку');}
+                 apperr.text('Вы уже отправляли такую заявку под номером ' + errors['numberApp']);}
              else
                  apperr.text('');
              if (k == 0)

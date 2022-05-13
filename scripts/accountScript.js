@@ -7,7 +7,8 @@ function ShowFormCreateApplication(){
 }
 
 function Exit(){
-    window.location.href = 'index.html';
+     document.location.replace( 'https://lab6/index.html');
+  
 }
 
 function ShowMyApp(){

@@ -42,6 +42,7 @@ $error['countErr'] = $error_count;
 $error['dateErr'] = $error_date;
 $error['minesErr'] = $error_mines;
 
+$number = 0;
 //проверка на повторную заявку
 foreach ($baseUsers as $USER => $datauserbase){
             if ($data['user'] == $datauserbase['login']){
@@ -51,6 +52,7 @@ foreach ($baseUsers as $USER => $datauserbase){
                    if ($data['phone'] == $app['phone'] && $data['count']==$app['count'] &&
                            $data['tur'] == $app['tur'] && $data['date']==$app['date'] && $data['comment']==$app['comment']){
                        $error_APPLICATION = false;
+                       $number = $num;
                        break;
                    }
                }
@@ -60,6 +62,7 @@ foreach ($baseUsers as $USER => $datauserbase){
  }
     
  $error['appErr'] = $error_APPLICATION;
+ $error['numberApp'] =  $number;
     
 echo json_encode($error);
 
