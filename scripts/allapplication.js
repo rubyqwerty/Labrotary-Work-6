@@ -46,5 +46,5 @@ function createtable(database){
   }
   
 function main(){
-      window.location.href = 'account.html';
+       location.replace('account.html');
   }

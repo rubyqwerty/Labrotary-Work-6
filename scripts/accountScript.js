@@ -3,14 +3,14 @@ function CurrentUser(){
     curuser.text(localStorage['current user']);
 }
 function ShowFormCreateApplication(){
-     window.location.href = 'FormCreateApplication.html';
+     location.replace('FormCreateApplication.html');
 }
 
 function Exit(){
-     document.location.replace( 'https://lab6/index.html');
+     location.replace( 'https://lab6/index.html');
   
 }
 
 function ShowMyApp(){
-    window.location.href = 'MyApplication.html';
+   location.replace('MyApplication.html');
 }

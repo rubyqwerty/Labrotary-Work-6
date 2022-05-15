@@ -24,11 +24,8 @@ function sendApplication() {
             console.log(this.responseText);
             var k = 0;
             let errors = JSON.parse(this.responseText);
-            if (errors['phoneErr'] == false){
-                k++;
-                phoneError.text("Некорректный номер");}
-            else
-                phoneError.text("");
+            if (errors['phoneErr'] !='')k++;
+            phoneError.text(errors['phoneErr']);
             
             if (errors['turErr'] == false){
                 k++;
@@ -36,11 +33,9 @@ function sendApplication() {
              else
                 turError.text("");
             
-            if (errors['countErr'] == false || errors['countErr'] == false){
-                k++;
-                counterr.text('Введите корректные данные');}
-             else
-                 counterr.text('');
+            if (errors['countErr'] != '')k++;
+             counterr.text(errors['countErr']);
+            
              
              
              
@@ -56,7 +51,7 @@ function sendApplication() {
              else
                  apperr.text('');
              if (k == 0)
-                 window.location.href = 'account.html';
+                 location.replace('account.html');
              
         }
     };

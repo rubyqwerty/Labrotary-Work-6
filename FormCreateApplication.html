@@ -14,7 +14,7 @@
     <body onload = 'CurrentUser()'>
         
         <div id = 'current-user' class = 'user'></div>
-        
+        <div  class = 'exit'><input type ="button" class ="bn3637 bn36" value ="Выход" onclick = "Exit()"></div>
         <div class="login-box">
         <h2>Заявка</h2>
             <form>
@@ -27,7 +27,7 @@
                 
                  <div class = "user-box">
                      
-                    <input type = "number" name = "count" min = "1" required="" class = 'count' max="20" value="1" >
+                    <input type = "number" name = "count" min = "1" required="" class = 'count'  value="1" >
                     <label>Количество человек</label>
                     <p class = "errors" id = "counterr"></p>
                 </div>
@@ -52,14 +52,15 @@
                     <p class = "errors" id = "dateerr"></p>
                 </div>
                 
-                <textarea placeholder = "Добавьте комментарий" class = "comment" maxlength="30"></textarea>
+                <textarea placeholder = "Добавьте комментарий" class = "comment" maxlength="26"></textarea>
                 <div>
          <p class = "errors" id = "apperr"></p>
          </div>
+                <center>
                 <p>
                 <input type ="button" class ="bn3637 bn36" value ="Сохранить" onclick="sendApplication()">
                
-                <input type ="button" class ="bn3637 bn36" value ="Главная" onclick="back()">
+               
                 
                 </p>
            

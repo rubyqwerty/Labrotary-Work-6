@@ -30,7 +30,7 @@
             loginError.text(errors['login-error']);
             passwordError.text(errors['password-error']);
             if (errors['name-error'] == '' && errors['age-error']== '' && errors['email-error']=='' && errors['login-error']=='' && errors['password-error']==''){
-                window.location.href = 'index.html';
+              location.replace('index.html');
             }
         }
     };

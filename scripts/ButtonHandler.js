@@ -26,7 +26,7 @@ function enter(){
                 status.text(output['empty']);
             } else{
                 localStorage['current user'] = output['current user'];
-                window.location.href = 'account.html';
+                location.replace('account.html');
                 
             }
         }
