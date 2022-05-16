@@ -69,7 +69,7 @@ echo json_encode($errors);
 
 if ($status_login = true && $status_age = true && $status_email = true && $status_name = true &&  $status_password == true) {
 
-    $filename = "JSON/Users.json";
+    $filename = "../JSON/Users.json";
 
     $file = file_get_contents ($filename);
 

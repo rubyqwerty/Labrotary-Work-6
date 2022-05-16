@@ -4,7 +4,7 @@ header("Content-Type: application/json");
 
 $data = json_decode(file_get_contents("php://input") , true);
 
-$filename = "JSON/Users.json";
+$filename = "../JSON/Users.json";
 
 $file = file_get_contents ($filename);
 
@@ -20,27 +20,38 @@ $error_date = true;
 $error_APPLICATION = true;
 
 $error = array();
+$error['countErr'] = '';
+$error['phoneErr'] = '';
 
-if (strlen($data['phone']) != 11)
+if (strlen($data['phone']) != 11){
     $error_phone = false;
-
+    $error['phoneErr'] = 'Номер телефона состоит из 11 цифр (без +)';
+}
+if ($data['phone'] == ''){
+    $error_phone = false;
+    $error['phoneErr'] = 'Введите номер телефона';
+}
 if ($data['tur'] == 'Выберите тур')
     $error_tur = false;
 
-if ($data['count'] == '')
-    $error_count = false;
+if ($data['count'] == '' ){
+    $error['countErr'] = 'Введите количество';
+    $error_count = false;}
 
-if (strpos($data['count'] , '-') != false)
-    $error_mines = false;
+if (strpos($data['count'] , '-') != false || (int)$data['count'] == 0){
+    $error['countErr'] = 'Введите положительное число';
+    $error_count = false;
+}
+if ((int)$data['count'] > 20){
+    $error['countErr'] = 'Максимальное количество человек: 20';
+    $error_count = false;}
 
 if ($data['date'] == '')
     $error_date = false;
 
-$error['phoneErr'] = $error_phone;
 $error['turErr'] = $error_tur;
-$error['countErr'] = $error_count;
 $error['dateErr'] = $error_date;
-$error['minesErr'] = $error_mines;
+
 
 $number = 0;
 //проверка на повторную заявку

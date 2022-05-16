@@ -6,7 +6,7 @@ $data = json_decode(file_get_contents("php://input") , true);
 
 $output = array();
 
-$filename = "JSON/Users.json";
+$filename = "../JSON/Users.json";
 
 $file = file_get_contents ($filename);
 
